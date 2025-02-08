@@ -130,9 +130,3 @@ def delete_feedback(id):
     db.session.delete(feedback)
     db.session.commit()
   return redirect(f"/users/{ feedback.users.username }")
-
-@app.route('/clear')
-def clear():
-  db.drop_all()
-  db.create_all()
-  return redirect('/login')
